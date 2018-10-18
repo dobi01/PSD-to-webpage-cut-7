@@ -1,0 +1,102 @@
+<%- include('base/_header.html') %>
+
+<% var flats = [
+        { "id":"M1", "name":"1", "etap":1, "building":"1", "rooms_count":"3", "area":"23.50", "terrace":"20.33", "garden":"21.30",
+        "floor":"0", "state":{"value":"free","label":"Wolne"}, "price":"427031", "sale_price":"" }, 
+        { "id":"M2", "name":"2", "etap":1,
+        "building":"1", "rooms_count":"3", "area":"11.50", "terrace":"24.33", "garden":"22.30", "floor":"0", "state":{"value":"sale","label":"Promocja"},
+        "price":"427035","sale_price":"10000" }, 
+        { "id":"M3", "name":"3", "etap":1, "building":"1", "rooms_count":"3", "area":"113.50",
+        "terrace":"13.33", "garden":"24.35", "floor":"1", "state":{"value":"free","label":"Wolne"}, "price":"427335","sale_price":""}, 
+        { "id":"M4", "name":"4", "etap":1, "building":"2", "rooms_count":"3", "area":"223.50", "terrace":"34.33", "garden":"23.32",
+        "floor":"1", "state":{"value":"sold","label":"Sprzedane"}, "price":"427033","sale_price":"" }, 
+        { "id":"M5", "name":"5", "etap":1,
+        "building":"3", "rooms_count":"3", "area":"44.50", "terrace":"35.33", "garden":"56.30", "floor":"1", "state":{"value":"sold","label":"Sprzedane"},
+        "price":"427035","sale_price":"" }, 
+        { "id":"M6", "name":"6", "etap":2, "building":"5", "rooms_count":"3", "area":"73.10",
+        "terrace":"11.33", "garden":"123.30", "floor":"2", "state":{"value":"sold","label":"Sprzedane"}, "price":"422035","sale_price":""
+        }
+    ]; %>
+
+<section class="search">
+<!-- SEARCH MENU -->
+  <div class="search__container">
+    <div class="search__wrapper">
+      <h1 class="search__header search__header--gold">Wybierz parametry wyszukiwania</h1>
+      <!-- SLIDERS -->
+      <form action="" method="" class="slider__container">
+        <div class="slider__wrapper">
+          <div id="slider-area">
+            <label class="slider__label" for="area">Powierzchnia (m<sup class="slider__label-sup">2</sup>)</label>
+            <input class="slider__input slider__input--left" type="text" value="35" id="areaMin" data-name="min" readonly >
+            <input class="slider__input slider__input--right" type="text" value="75" id="areaMax" data-name="max" readonly >
+          </div>
+        </div>
+        <div class="slider__wrapper">
+          <div id="slider-price">
+            <label class="slider__label" for="price">Zakres cenowy (zł)</label>
+            <input class="slider__input slider__input--left" type="text" value="190000" id="priceMin" data-name="min" readonly >
+            <input class="slider__input slider__input--right" type="text" value="350000" id="priceMax" data-name="max" readonly >
+          </div>
+        </div>
+        <div class="slider__wrapper">
+          <div id="slider-rooms">
+            <label class="slider__label" for="rooms">Ilość pomieszczeń</label>
+            <input class="slider__input slider__input--left" type="text" value="1" id="roomsMin" data-name="min" readonly >
+            <input class="slider__input slider__input--right" type="text" value="4" id="roomsMax" data-name="max" readonly >
+          </div>
+        </div>
+        <!-- RADIO BUTTONS -->
+        <div class="radio">
+          <input class="radio__item" type="radio" id="free" name="free-or-sale" value="free" checked />
+          <label class="radio__label" for="free"></label>
+          <span class="radio__description">
+            Wolne <span class="radio__description radio__description--gold">()</span>
+          </span>
+          <input class="radio__item" type="radio" id="sale" name="free-or-sale" value="sale" />
+          <label class="radio__label" for="sale"></label>
+          <span class="radio__description">
+            Promocja <span class="radio__description radio__description--gold">()</span>
+          </span>
+        </div>
+      </form>
+    </div> 
+  </div>
+  <div class="search__container search__container--gray">
+    <div class="search__wrapper">
+      <section class="search-results">
+        <h1 class="search__header search__header--gray">Wyniki wyszukiwania</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>NUMER<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>POWIERZCHNIA<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>POKOJE<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>PIĘTRO<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>STATUS<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>CENA<img src="assets/images/down-arrow.png" alt=""></th>
+              <th>KARTA</th>
+              <th>DODAJ DO KOSZYKA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i = 0; i < flats.length ; i++) { %>
+              <tr>
+                <td><%= flats[i].id %></td>
+                <td><%= flats[i].area %> m<sup>3</sup></td>
+                <td><%= flats[i].rooms_count %></td>
+                <td><%= flats[i].floor %></td>
+                <td><%= flats[i].state.label %></td>
+                <td><%= flats[i].price %> zł</td>
+                <td><img src="assets/images/file_icon.png" alt=""></td>
+                <td><img src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </section>
+    </div> 
+  </div>
+</section>
+
+<%- include('base/_footer.html') %>

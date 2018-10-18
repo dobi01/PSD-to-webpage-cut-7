@@ -1,0 +1,41 @@
+.ui-state-default, 
+.ui-widget-content .ui-state-default {
+  border: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: $gold;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.ui-widget-header {
+  background: $gold;
+  border-radius: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  padding: 2.5px;
+}
+
+.ui-slider-horizontal {
+  padding: 2.5px;
+  height: 6px;
+  border-radius: 0;
+}
+
+.ui-widget-content {
+  background: $gray1;
+  padding: 0;
+  width: 416px;
+}
+
+.ui-state-default {
+  background: $gray1;
+}
+
+.ui-widget.ui-widget-content {
+  border: none;
+}
