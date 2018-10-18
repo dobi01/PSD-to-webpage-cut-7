@@ -26,24 +26,42 @@
       <!-- SLIDERS -->
       <form action="" method="" class="slider__container">
         <div class="slider__wrapper">
-          <div id="slider-area">
+          <div class="slider" id="slider-area">
             <label class="slider__label" for="area">Powierzchnia (m<sup class="slider__label-sup">2</sup>)</label>
-            <input class="slider__input slider__input--left" type="text" value="35" id="areaMin" data-name="min" readonly >
-            <input class="slider__input slider__input--right" type="text" value="75" id="areaMax" data-name="max" readonly >
+            <input class="slider__input slider__input--left" 
+                   type="text" value="35" id="areaMin" 
+                   data-current-min="35" data-name="min" 
+                   data-min="25" data-step="5" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="75" id="areaMax" 
+                   data-current-max="75" data-name="max"
+                   data-max="120" data-step="5" readonly >
           </div>
         </div>
         <div class="slider__wrapper">
-          <div id="slider-price">
+          <div class="slider" id="slider-price">
             <label class="slider__label" for="price">Zakres cenowy (zł)</label>
-            <input class="slider__input slider__input--left" type="text" value="190000" id="priceMin" data-name="min" readonly >
-            <input class="slider__input slider__input--right" type="text" value="350000" id="priceMax" data-name="max" readonly >
+            <input class="slider__input slider__input--left" 
+                   type="text" value="190 000" id="priceMin" 
+                   data-current-min="190000" data-name="min" 
+                   data-min="190000" data-step="20000" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="350 000" id="priceMax" 
+                   data-current-max="250000" data-name="max"
+                   data-max="350000" data-step="20000" readonly >
           </div>
         </div>
         <div class="slider__wrapper">
-          <div id="slider-rooms">
+          <div class="slider" id="slider-rooms">
             <label class="slider__label" for="rooms">Ilość pomieszczeń</label>
-            <input class="slider__input slider__input--left" type="text" value="1" id="roomsMin" data-name="min" readonly >
-            <input class="slider__input slider__input--right" type="text" value="4" id="roomsMax" data-name="max" readonly >
+            <input class="slider__input slider__input--left" 
+                   type="text" value="1" id="roomsMin" 
+                   data-current-min="1" data-name="min" 
+                   data-min="1" data-step="1" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="4" id="roomsMax" 
+                   data-current-max="3" data-name="max"
+                   data-max="4" data-step="1" readonly >
           </div>
         </div>
         <!-- RADIO BUTTONS -->
