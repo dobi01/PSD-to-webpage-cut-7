@@ -5,7 +5,7 @@
         "floor":"0", "state":{"value":"free","label":"Wolne"}, "price":"427031", "sale_price":"" }, 
         { "id":"M2", "name":"2", "etap":1,
         "building":"1", "rooms_count":"3", "area":"11.50", "terrace":"24.33", "garden":"22.30", "floor":"0", "state":{"value":"sale","label":"Promocja"},
-        "price":"427035","sale_price":"10000" }, 
+        "price":"427035","sale_price":"300000" }, 
         { "id":"M3", "name":"3", "etap":1, "building":"1", "rooms_count":"3", "area":"113.50",
         "terrace":"13.33", "garden":"24.35", "floor":"1", "state":{"value":"free","label":"Wolne"}, "price":"427335","sale_price":""}, 
         { "id":"M4", "name":"4", "etap":1, "building":"2", "rooms_count":"3", "area":"223.50", "terrace":"34.33", "garden":"23.32",
@@ -84,30 +84,40 @@
     <div class="search__wrapper">
       <section class="search-results">
         <h1 class="search__header search__header--gray">Wyniki wyszukiwania</h1>
-        <table>
+        <table class="table">
           <thead>
             <tr>
-              <th>NUMER<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>POWIERZCHNIA<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>POKOJE<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>PIĘTRO<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>STATUS<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>CENA<img src="assets/images/down-arrow.png" alt=""></th>
-              <th>KARTA</th>
-              <th>DODAJ DO KOSZYKA</th>
+              <th class="table__header">NUMER
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">POWIERZCHNIA
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">POKOJE
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">PIĘTRO
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header table__header--narrowed">STATUS
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">CENA
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header table__header--center">KARTA</th>
+              <th class="table__header table__header--center">DODAJ DO KOSZYKA</th>
             </tr>
           </thead>
           <tbody>
             <% for(var i = 0; i < flats.length ; i++) { %>
-              <tr>
-                <td><%= flats[i].id %></td>
-                <td><%= flats[i].area %> m<sup>3</sup></td>
-                <td><%= flats[i].rooms_count %></td>
-                <td><%= flats[i].floor %></td>
-                <td><%= flats[i].state.label %></td>
-                <td><%= flats[i].price %> zł</td>
-                <td><img src="assets/images/file_icon.png" alt=""></td>
-                <td><img src="assets/images/shopping-basket_icon.png" alt=""></td>
+              <tr class="table__row">
+                <td class="table__data"><%= flats[i].id %></td>
+                <td class="table__data"><%= flats[i].area %> m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data"><%= flats[i].rooms_count %></td>
+                <td class="table__data"><%= flats[i].floor %></td>
+                <td class="table__data">
+                  <span class="table__data-wrapper"><%= flats[i].state.label %></span></td>
+                <td class="table__data">
+                  <span class="table__data--gray"><%= flats[i].price %> zł</span>
+                  <span class="table__data--red"><%= flats[i].sale_price %></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
               </tr>
             <% } %>
           </tbody>
