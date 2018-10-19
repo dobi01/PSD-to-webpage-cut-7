@@ -8,6 +8,7 @@ window.onload = function() {
     return price = string.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
+  // SLIDERS
   $.each( $('.slider'), function( index, value ) {
 
     let inputMax = $(this).find('[data-name="max"]'),
@@ -32,6 +33,34 @@ window.onload = function() {
         $(inputMax).val( formatPrice(ui.values[ 1 ]) );
       }
     })
+  });
+
+  // RADIO INPUTS
+  let countFree = $( ".table__data-wrapper:contains('Wolne')" ).length,
+      countSale = $( ".table__data-wrapper:contains('Promocja')" ).length;
+
+  $('#span-free').html('(' + countFree + ')');
+  $('#span-sale').html('(' + countSale + ')');
+  
+  // STYLE TABLE DATA
+  $( ".table__data-wrapper:contains('Sprzedane')" ).css( "background", "#b2b2b2" );
+
+  $.each( $('.table__data--red'), function( index, value ) {
+    let text = $(this).text();
+    if ( text ) {
+      $(this).prev().css({ 
+        "text-decoration" : "line-through",
+        "color" : "#adadad" 
+      });
+      text = formatPrice(text);
+      $(this).html(text + ' zł');
+    }
+  });
+
+  $.each( $('.table__data--black'), function( index, value ) {
+    let text = $(this).text();
+    text = formatPrice(text);
+    $(this).html(text + ' zł');
   });
 
 }

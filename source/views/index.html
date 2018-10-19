@@ -21,6 +21,7 @@
 <section class="search">
 <!-- SEARCH MENU -->
   <div class="search__container">
+    <span class="decorative-strip decorative-strip--gold"></span>
     <div class="search__wrapper">
       <h1 class="search__header search__header--gold">Wybierz parametry wyszukiwania</h1>
       <!-- SLIDERS -->
@@ -69,18 +70,20 @@
           <input class="radio__item" type="radio" id="free" name="free-or-sale" value="free" checked />
           <label class="radio__label" for="free"></label>
           <span class="radio__description">
-            Wolne <span class="radio__description radio__description--gold">()</span>
+            Wolne <span id="span-free" class="radio__description radio__description--gold">()</span>
           </span>
           <input class="radio__item" type="radio" id="sale" name="free-or-sale" value="sale" />
           <label class="radio__label" for="sale"></label>
           <span class="radio__description">
-            Promocja <span class="radio__description radio__description--gold">()</span>
+            Promocja <span id="span-sale" class="radio__description radio__description--gold">()</span>
           </span>
         </div>
       </form>
     </div> 
   </div>
+  <!-- SEARCH RESULTS -->
   <div class="search__container search__container--gray">
+    <span class="decorative-strip decorative-strip--gray"></span>
     <div class="search__wrapper">
       <section class="search-results">
         <h1 class="search__header search__header--gray">Wyniki wyszukiwania</h1>
@@ -113,7 +116,9 @@
                 <td class="table__data">
                   <span class="table__data-wrapper"><%= flats[i].state.label %></span></td>
                 <td class="table__data">
-                  <span class="table__data--gray"><%= flats[i].price %> zł</span>
+                  <span class="table__data--black">
+                    <%= flats[i].price %> 
+                  </span>
                   <span class="table__data--red"><%= flats[i].sale_price %></span>
                 </td>
                 <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>

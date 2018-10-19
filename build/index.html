@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/styles/bundle.css">
+  </head>
+  <body>
+
+
+
+
+<section class="search">
+<!-- SEARCH MENU -->
+  <div class="search__container">
+    <span class="decorative-strip decorative-strip--gold"></span>
+    <div class="search__wrapper">
+      <h1 class="search__header search__header--gold">Wybierz parametry wyszukiwania</h1>
+      <!-- SLIDERS -->
+      <form action="" method="" class="slider__container">
+        <div class="slider__wrapper">
+          <div class="slider" id="slider-area">
+            <label class="slider__label" for="area">Powierzchnia (m<sup class="slider__label-sup">2</sup>)</label>
+            <input class="slider__input slider__input--left" 
+                   type="text" value="35" id="areaMin" 
+                   data-current-min="35" data-name="min" 
+                   data-min="25" data-step="5" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="75" id="areaMax" 
+                   data-current-max="75" data-name="max"
+                   data-max="120" data-step="5" readonly >
+          </div>
+        </div>
+        <div class="slider__wrapper">
+          <div class="slider" id="slider-price">
+            <label class="slider__label" for="price">Zakres cenowy (zł)</label>
+            <input class="slider__input slider__input--left" 
+                   type="text" value="190 000" id="priceMin" 
+                   data-current-min="190000" data-name="min" 
+                   data-min="190000" data-step="20000" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="350 000" id="priceMax" 
+                   data-current-max="250000" data-name="max"
+                   data-max="350000" data-step="20000" readonly >
+          </div>
+        </div>
+        <div class="slider__wrapper">
+          <div class="slider" id="slider-rooms">
+            <label class="slider__label" for="rooms">Ilość pomieszczeń</label>
+            <input class="slider__input slider__input--left" 
+                   type="text" value="1" id="roomsMin" 
+                   data-current-min="1" data-name="min" 
+                   data-min="1" data-step="1" readonly >
+            <input class="slider__input slider__input--right" 
+                   type="text" value="4" id="roomsMax" 
+                   data-current-max="3" data-name="max"
+                   data-max="4" data-step="1" readonly >
+          </div>
+        </div>
+        <!-- RADIO BUTTONS -->
+        <div class="radio">
+          <input class="radio__item" type="radio" id="free" name="free-or-sale" value="free" checked />
+          <label class="radio__label" for="free"></label>
+          <span class="radio__description">
+            Wolne <span id="span-free" class="radio__description radio__description--gold">()</span>
+          </span>
+          <input class="radio__item" type="radio" id="sale" name="free-or-sale" value="sale" />
+          <label class="radio__label" for="sale"></label>
+          <span class="radio__description">
+            Promocja <span id="span-sale" class="radio__description radio__description--gold">()</span>
+          </span>
+        </div>
+      </form>
+    </div> 
+  </div>
+  <!-- SEARCH RESULTS -->
+  <div class="search__container search__container--gray">
+    <span class="decorative-strip decorative-strip--gray"></span>
+    <div class="search__wrapper">
+      <section class="search-results">
+        <h1 class="search__header search__header--gray">Wyniki wyszukiwania</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__header">NUMER
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">POWIERZCHNIA
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">POKOJE
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">PIĘTRO
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header table__header--narrowed">STATUS
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header">CENA
+                <img class="table__img" src="assets/images/down-arrow.png" alt=""></th>
+              <th class="table__header table__header--center">KARTA</th>
+              <th class="table__header table__header--center">DODAJ DO KOSZYKA</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr class="table__row">
+                <td class="table__data">M1</td>
+                <td class="table__data">23.50 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">0</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Wolne</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    427031 
+                  </span>
+                  <span class="table__data--red"></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+              <tr class="table__row">
+                <td class="table__data">M2</td>
+                <td class="table__data">11.50 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">0</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Promocja</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    427035 
+                  </span>
+                  <span class="table__data--red">300000</span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+              <tr class="table__row">
+                <td class="table__data">M3</td>
+                <td class="table__data">113.50 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">1</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Wolne</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    427335 
+                  </span>
+                  <span class="table__data--red"></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+              <tr class="table__row">
+                <td class="table__data">M4</td>
+                <td class="table__data">223.50 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">1</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Sprzedane</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    427033 
+                  </span>
+                  <span class="table__data--red"></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+              <tr class="table__row">
+                <td class="table__data">M5</td>
+                <td class="table__data">44.50 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">1</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Sprzedane</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    427035 
+                  </span>
+                  <span class="table__data--red"></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+              <tr class="table__row">
+                <td class="table__data">M6</td>
+                <td class="table__data">73.10 m<sup class="table__data--sup">3</sup></td>
+                <td class="table__data">3</td>
+                <td class="table__data">2</td>
+                <td class="table__data">
+                  <span class="table__data-wrapper">Sprzedane</span></td>
+                <td class="table__data">
+                  <span class="table__data--black">
+                    422035 
+                  </span>
+                  <span class="table__data--red"></span>
+                </td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/file_icon.png" alt=""></td>
+                <td class="table__data table__data--center"><img class="table__icon" src="assets/images/shopping-basket_icon.png" alt=""></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+    </div> 
+  </div>
+</section>
+
+    <script src="assets/scripts/bundle.js"></script>
+  </body>
+</html>
+

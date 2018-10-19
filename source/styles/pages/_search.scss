@@ -36,6 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
   }
   &__wrapper {
     position: relative;
@@ -114,6 +115,7 @@
     text-align: left;
     &--center {
       text-align: center;
+      padding: 0;
     }
     &--narrowed {
     width: 312px;
@@ -134,9 +136,7 @@
     &--center {
       padding: 0;
     }
-    &--gray {
-      color: $gray4;
-      text-decoration: line-through;
+    &--black {
       font-weight: 600;
       padding-right: 10px;
     }
@@ -168,5 +168,21 @@
     &:nth-child(odd) {
       background-color: #ededed;
     }
+  }
+}
+
+.decorative-strip {
+  width: calc((100vw - 1440px) / 2);
+  height: 12px;
+  background-color: $gold;
+  position: absolute;
+  left: -60px;
+  &--gray {
+    background-color: $gray3;
+    top: 571px;
+  }
+  &--gold {
+    background-color: $gold;
+    top: 107px;
   }
 }
