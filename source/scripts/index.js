@@ -43,7 +43,7 @@ window.onload = function() {
   $('#span-sale').html('(' + countSale + ')');
   
   // STYLE TABLE DATA
-  $( ".table__data-wrapper:contains('Sprzedane')" ).css( "background", "#b2b2b2" );
+  $( ".table__data-wrapper:contains('Rezerwacja')" ).css( "background", "#b2b2b2" );
 
   $.each( $('.table__data--red'), function( index, value ) {
     let text = $(this).text();
@@ -61,6 +61,20 @@ window.onload = function() {
     let text = $(this).text();
     text = formatPrice(text);
     $(this).html(text + ' zł');
+  });
+
+  // FILTER
+  var detachedRows;
+  $('.radio__item').on('click', function() {
+    
+    if ( $(this).val() === 'sale' ) {
+      let grandParent = $( ".table__data-wrapper:contains('Promocja')" ).parent().parent();
+      detachedRows = $( ".table__row" ).detach();
+      grandParent.appendTo( "tbody" );
+    } else {
+      detachedRows.appendTo( "tbody" );
+    }
+  
   });
 
 }
